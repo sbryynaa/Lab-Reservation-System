@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="public-head" :: public-head/>
+<body class="d-flex h-100 text-center text-white bg-dark">
+<div class="w-100 h-100 img-wrap">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header th:replace="public-nav :: public-nav"></header>
+        <main class="px-3">
+            <h1 style="color:black; font-size:22px;" class="mt-3 mb-3">Search Student Data</h1>
+            <p style="color:black;" class="lead mt-3 mb-3">Enter student email or name to search.</p>
+            <div class="search w-50 mx-auto mt-3 mb-3">
+                <form class="form-inline" th:action="@{/student/search}" method="get">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search for a student..."
+                           th:value="${keyword}" required>
+                    <button type="submit" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer th:replace="public-footer :: public-footer"></footer>
+    </div>
+</div>
+</body>
+</html>

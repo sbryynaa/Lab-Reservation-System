@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="public-head" :: public-head/>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="w-100 h-100 img-wrap">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header th:replace="public-nav :: public-nav"></header>
+    <h1 style="color:black; font-size:22px;" class="mt-3 mb-3">[[${pageTitle}]]</h1>
+    <form class="w-50 h-50 mx-auto flex-column" th:action="@{/admin/reservation/save}" method="post" th:object="${reservation}">
+      <input type="hidden" th:field="*{id}">
+      <div class="container p-3">
+
+        <div class="mt-3 mb-3 row">
+
+          <label for="reservation_name" class="col-sm-2 col-form-label">Reservation Name</label>
+          <div class="col-sm-10">
+            <input th:field="*{reservation_name}" type="text" name="reservation_name" id="reservation_name" class="form-control"
+                   placeholder="Reservation Name">
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="bookingname" class="col-sm-2 col-form-label">Booking Name</label>
+          <div class="col-sm-10">
+            <input th:field="*{bookingname}" type="text" name="bookingname" id="bookingname" class="form-control"
+                   placeholder="bookingname">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+              <input th:field="*{date}" type="text" name="date" id="date" class="form-control"
+                     placeholder="Date">
+            </div>
+
+          </div>
+          <div class="mb-3 row">
+            <label for="time" class="col-sm-2 col-form-label">Time</label>
+            <div class="col-sm-10">
+              <select name="time" id="time" class="form-select">
+                <option value="10.00 AM">10.00 AM</option>
+                <option value="9.00 PM">9.00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="total_reservation" class="col-sm-2 col-form-label">Total Reservation</label>
+            <div class="col-sm-10">
+              <input th:field="*{total_reservation}" type="text" name="total_reservation" id="total_reservation" class="form-control"
+                     placeholder="Total Reservation">
+            </div>
+
+          </div>
+
+
+          <div class="mb-3 row">
+            <div>
+
+              <a th:href="@{/admin/reservation}" class="btn btn-primary mb-3 text-uppercase" style="width:120px;">Cancel
+              </a>
+              <button type="submit" class="btn btn-primary mb-3 text-uppercase" style="width:120px;">Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <footer th:replace="public-footer :: public-footer"></footer>
+</div>
+</div>
+
+
+</body>
+</html>

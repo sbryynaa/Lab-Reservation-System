@@ -1,0 +1,5 @@
+<footer class="mt-auto text-white-50" th:fragment="public-footer">
+    <p style="color:black;">©Lab Reservation System. All Rights Reserved. <span sec:authorize="!hasRole('ADMIN') and isAuthenticated()"> | Logged in as [[${#request.userPrincipal.principal.fullName}]].</span>
+        <span sec:authorize="hasRole('ADMIN')"> | Logged in as Administrator.</span>
+    </p>
+</footer>
