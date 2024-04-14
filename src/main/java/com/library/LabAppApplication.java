@@ -1,11 +1,4 @@
-/**
- * Library Management System
- * version 1.0
- *
- * Spring Boot Application with CRUD operations and...
- * authentication-based login using Spring Security
- *
- */
+
 package com.library;
 
 import org.springframework.boot.SpringApplication;
@@ -23,11 +16,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 // Annotate as SpringBootApplication
 @SpringBootApplication
-public class LibraryAppApplication {
+public class LabAppApplication {
 
 	// Run the Spring application!
 	public static void main(String[] args) {
-		SpringApplication.run(LibraryAppApplication.class, args);
+		SpringApplication.run(LabAppApplication.class, args);
 	}
 
 }
